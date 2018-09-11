@@ -487,7 +487,15 @@ HTTPS通信プロトコルとして最も適当なものを選択しなさい。
 
 ### 解説
 
-問１でも解説しましたが、
+プロトコルの解説を転記する
+
+HTTP（えいちてぃーてぃーぴー:Hypertext Transfer Protocol）とは、HTMLなどのWeb文章をやり取りするためのプロトコルです。HTTP通信の特徴として、通信内容が暗号化されていないことが挙げられます。次のURLのどれかにアクセスしてみてください。
+
+- http://www.mlit.go.jp/
+- http://www.mbga.jp/_game_intro?game_id=12017647
+- http://www.sagawa-exp.co.jp/send/howto-search.html
+
+ブラウザのURL表示部分に注目してください。
 
 1. HTTPS
 2. POP
