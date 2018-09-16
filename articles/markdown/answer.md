@@ -584,11 +584,29 @@ Webアプリケーションに対する負荷を調整するための機材名�
 
 2. LAMP
 
-Wordpress（わーどぷれす）はLAMP構成の代表例です。
+LAMP（らんぷ）とは、
+
+- Linux（りなっくす）
+- Apache（あぱっち）
+- MySQL（まいえすきゅーえる）
+- PHP（ぴーえいちぴー）
+
+で構成されているWebアプリケーションの総称です。問題2の問6でも出てきた``緑黄色野菜``と同じような扱いです。
+Wordpress（わーどぷれす）は、LAMP構成の代表選手です。Webサイトを作成・運営ができるアプリケーションです。記事の作成はWordpressの管理画面から行うことができますし、ブログの見た目をHTML・CSSなどを用いてカスタマイズすることも可能です。
 
 3. lint
 
+**lint** （りんと）とは、主にC言語で作成されたプログラムの内容が正しくできているのか？を検査するためのプログラムです。ただし、最近は言語用のlintツールが登場しているため、 ``lint`` という文字が登場した場合「何かしらのプログラムを検査するツールかな」と思っていただくのが良いと思います。いくつか例をあげておくので、自分のお好きな言語で取り入れてみるのはいかがでしょうか？同じ言語でもlintツールが複数開発されている場合もありますし、あなただってlintツールを作成できるかもしれませんよ。
+
+- [ESLint/JavaScript用のlintツール](https://eslint.org/)
+- [RuboCop/Ruby用のlintツール](http://docs.rubocop.org/en/latest/)
+- [Pylint/Python用のlintツール](https://www.pylint.org/)
+- [Golint/Go用のlintツール](https://github.com/golang/lint)
+- [Error Prone/Java用のlintツール](https://errorprone.info/)
+
 4. Telnet
+
+**Telnet** （てるねっと）とは、
 
 ## 第３問
 
