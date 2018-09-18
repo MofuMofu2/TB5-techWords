@@ -54,6 +54,23 @@ APIの作成者はWebサービスを運営している団体・個人である�
 - PHP（こちらも初心者におすすめされる言語です）
 - VBScript（Excelマクロなどで利用されている言語です）
 
+スクリプト言語の一例として、スクリプト言語の代表選手であるJavaScriptをHTMLの中に記載しました。次のプログラムを実際に実行してみましょう。コンパイルを指示していないはずなのに、ボタンを押すと現在日時が表示されるはずです。
+
+```html
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Example JavaScript</title>
+</head>
+<body>
+  <button type = "button" onclick="document.getElementById('example').innerHTML = Date()">今の日時は？</button>
+  <p id="example"></p>
+</body>
+</html>
+```
+
 [^compile]: 問1の問題7の選択肢3.IDEの解説もあわせて参照してください。
 
 4. フレームワーク
