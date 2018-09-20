@@ -1,5 +1,5 @@
-let numeBtn = document.getElementById('button');
-let numeElm = document.getElementById('p');
+let numeBtn = document.getElementById('numerator');
+let numeElm = document.getElementById('numeratorPtag');
 
 numeBtn.addEventListener('click', () => {
   let numeCalc = 8 * 7 * 6;
