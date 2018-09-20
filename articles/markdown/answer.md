@@ -806,21 +806,21 @@ A，Bをともに含む選び方は何通りあるか。
 </head>
 <body>
   <div id="3_1_1">
-    <button>問3 問題1（1）の計算結果</button>
-    <p></p>
-    <script src="3_1_1.js"></script>
+    <button id="numerator">問3 問題1（1）の計算結果</button>
+    <p id="numeratorPtag"></p>
+    <script src="../js/3_1_1.js"></script>
   </div>
 </body>
 </html>
 ```
 
 ```js
-let btn = document.querySelector ('button');
-let elem = document.querySelector('p');
+let numeBtn = document.getElementById('numerator');
+let numeElm = document.getElementById('numeratorPtag');
 
-btn.addEventListener('click', () => {
-  let calc = 8 * 7 * 6;
-  elem.innerText = calc;
+numeBtn.addEventListener('click', () => {
+  let numeCalc = 8 * 7 * 6;
+  numeElm.innerText = numeCalc;
 });
 ```
 
@@ -828,7 +828,39 @@ btn.addEventListener('click', () => {
 
 今度は、重複している組み合わせを取り除く計算を行ってみましょう。HTMLは先ほどの例と同じ物に追記しています。
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>えみルー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="3_1_1">
+    <button id="numerator">問3 問題1（1）の計算結果</button>
+    <p id="numeratorPtag"></p>
+    <script src="../js/3_1_1.js"></script>
+  </div>
+  <div id="3_1_2">
+    <button id="denominator">問3 問題1（2）の計算結果</button>
+    <p id="denominatorPTag"></p>
+    <script src="../js/3_1_2.js"></script>
+  </div>
+</body>
+</html>
+```
 
+```js
+let denoBtn = document.getElementById('denominator');
+let denoElm = document.getElementById('denominatorPTag');
+
+denoBtn.addEventListener('click', () => {
+  let denoCalc = 3 * 2 * 1;
+  denoElm.innerText = denoCalc;
+});
+```
 
 #### （２）
 
