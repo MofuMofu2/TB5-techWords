@@ -567,11 +567,11 @@ HTTPS通信プロトコルとして最も適当なものを選択しなさい。
 - http：//www.mbga.jp/_game_intro?game_id=12017647
 - http：//www.sagawa-exp.co.jp/send/howto-search.html
 
-![某省のページ](./articles/images/国土交通省.png)
+![某省のページ](../images/国土交通省.png)
 
 ``保護されていない通信`` と出ていますね。問2の文章はこれのことを示しているのです。他のブラウザで見た場合、次の画像のように表示されます。筆者はSafariを使っています。
 
-![某省のページ_Safari](./articles/images/国土交通省.png)
+![某省のページ_Safari](../images/国土交通省.png)
 
 アドレスから``http`` という文字が省略されているようです。
 
@@ -583,10 +583,10 @@ HTTPS通信プロトコルとして最も適当なものを選択しなさい。
 
 Chromeでアクセスしたとき、筆者の手元ではこのようにURLが見えています。
 
-![hiyokomofu_chrome](./articles/images/Chrome_ひよこなもふもふちゃんと技術同人誌_fm.png)
+![hiyokomofu_chrome](../images/Chrome_ひよこなもふもふちゃんと技術同人誌_fm.png)
 
 Safariでアクセスしたときは、このようになっています。
-![hiyokomofu_safari](./articles/images/Safari_ひよこなもふもふちゃんと技術同人誌_fm.png)
+![hiyokomofu_safari](../images/Safari_ひよこなもふもふちゃんと技術同人誌_fm.png)
 
 ``保護されている通信``と記載がある・鍵マークが付いているなど、何かしら守られていそうな雰囲気ですね。HTTPSは ``Secure`` の名前通り、Web文章をやりとりするときに暗号化の処理をおこなってくれるプロトコルです。 ``HTTP over SSL/TLS`` と呼ばれていたりもします。 ``SSL/TLS`` （えすえすえる・てぃーえるえす）は暗号化方式の名称で、
 
@@ -793,8 +793,38 @@ A，Bをともに含む選び方は何通りあるか。
 - 割り算
   - 分数を計算するために必要（分数は割り算で計算するため）
 
-では、まず8通りから3人を選ぶ計算（1）をプログラムで再現してみます。ここではJavaScriptを使いますが、みなさんは好きな言語で実施してみてください。
+では、まず8通りから3人を選ぶ計算（1）をプログラムで再現してみます。ここではHTMLとJavaScriptを使いますが、みなさんは好きな言語で実施してみてください。HTMLをブラウザで開き、 ``問3 問題1（1）の計算結果`` ボタンを押すと、計算結果が出力されるはずです。
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>えみルー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="3_1_1">
+    <button>問3 問題1（1）の計算結果</button>
+    <p></p>
+    <script src="3_1_1.js"></script>
+  </div>
+</body>
+</html>
+```
+
+```js
+let btn = document.querySelector ('button');
+let elem = document.querySelector('p');
+
+btn.addEventListener('click', () => {
+  let calc = 8 * 7 * 6;
+  elem.innerText = calc;
+});
+```
+
+![](../images/3_1_1_runProgram.png)
 
 今度は、
 
