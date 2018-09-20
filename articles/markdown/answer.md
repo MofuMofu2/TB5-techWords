@@ -789,11 +789,11 @@ A，Bをともに含む選び方は何通りあるか。
 です。これを実現するためには、どのような文法を利用すれば良いでしょうか？思いつく限り挙げてみますね。
 
 - 掛け算
-  - 分数の箇所（1）（2）を計算するのに必要
+  - 分数の箇所（分母）（分子）を計算するのに必要
 - 割り算
   - 分数を計算するために必要（分数は割り算で計算するため）
 
-では、まず8通りから3人を選ぶ計算（1）をプログラムで再現してみます。ここではHTMLとJavaScriptを使いますが、みなさんは好きな言語で実施してみてください。HTMLをブラウザで開き、 ``問3 問題1（1）の計算結果`` ボタンを押すと、計算結果が出力されるはずです。
+では、まず8通りから3人を選ぶ計算（分子）をプログラムで再現してみます。ここではHTMLとJavaScriptを使いますが、みなさんは好きな言語で実施してみてください。HTMLをブラウザで開き、 ``問3 問題1（分子）の計算結果`` ボタンを押すと、計算結果が出力されるはずです。
 
 ```html
 <!DOCTYPE html>
@@ -806,7 +806,7 @@ A，Bをともに含む選び方は何通りあるか。
 </head>
 <body>
   <div id="3_1_1">
-    <button id="numerator">問3 問題1（1）の計算結果</button>
+    <button id="numerator">問3 問題1（分子）の計算結果</button>
     <p id="numeratorPtag"></p>
     <script src="../js/3_1_1.js"></script>
   </div>
@@ -839,12 +839,12 @@ numeBtn.addEventListener('click', () => {
 </head>
 <body>
   <div id="3_1_1">
-    <button id="numerator">問3 問題1（1）の計算結果</button>
+    <button id="numerator">問3 問題1（分子）の計算結果</button>
     <p id="numeratorPtag"></p>
     <script src="../js/3_1_1.js"></script>
   </div>
   <div id="3_1_2">
-    <button id="denominator">問3 問題1（2）の計算結果</button>
+    <button id="denominator">問3 問題1（分母）の計算結果</button>
     <p id="denominatorPTag"></p>
     <script src="../js/3_1_2.js"></script>
   </div>
@@ -861,6 +861,51 @@ denoBtn.addEventListener('click', () => {
   denoElm.innerText = denoCalc;
 });
 ```
+
+では、最後に ``分子`` 割る ``分母`` を実行します。
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>えみルー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="3_1_1">
+    <button id="numerator">問3 問題1（分子）の計算結果</button>
+    <p id="numeratorPtag"></p>
+    <script src="../js/3_1_1.js"></script>
+  </div>
+  <div id="3_1_2">
+    <button id="denominator">問3 問題1（分母）の計算結果</button>
+    <p id="denominatorPtag"></p>
+    <script src="../js/3_1_2.js"></script>
+  </div>
+  <div id="3_1_3">
+    <button id="result">問3の計算結果</button>
+    <p id="resultPtag"></p>
+    <script src="../js/3_1_3.js"></script>
+  </div>
+</body>
+</html>
+```
+
+```js
+let denoBtn = document.getElementById('denominator');
+let denoElm = document.getElementById('denominatorPtag');
+
+denoBtn.addEventListener('click', () => {
+  let denoCalc = 3 * 2 * 1;
+  denoElm.innerText = denoCalc;
+});
+```
+
+これを実行すると56通りとなります。しかし、プログラムとしてはかなりの改善点がありそうです。
+
+- 
 
 #### （２）
 
