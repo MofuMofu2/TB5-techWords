@@ -1,7 +1,7 @@
-let btn = document.querySelector ('button');
-let elem = document.querySelector('p');
+let numeBtn = document.getElementById('button');
+let numeElm = document.getElementById('p');
 
-btn.addEventListener('click', () => {
-  let calc = 8 * 7 * 6;
-  elem.innerText = calc;
+numeBtn.addEventListener('click', () => {
+  let numeCalc = 8 * 7 * 6;
+  numeElm.innerText = numeCalc;
 });

@@ -826,7 +826,9 @@ btn.addEventListener('click', () => {
 
 ![](../images/3_1_1_runProgram.png)
 
-今度は、
+今度は、重複している組み合わせを取り除く計算を行ってみましょう。HTMLは先ほどの例と同じ物に追記しています。
+
+
 
 #### （２）
 
