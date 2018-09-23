@@ -1,0 +1,746 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<h1 id="問題">問題</h1>
+<h2 id="第問">第１問</h2>
+<p>次の文章を読み，下記の問い（問１〜問７）に答えよ。（配点：35点）</p>
+<p>トム：やあジェリー、何をしているの？ ジェリー：キャリアアップのためにポートフォリオを作っているのよ。最近はTwitter（1）なんかで転職先や仕事の受注元を探している人も多いから、私も何か準備しようと思っていたの。 トム：さすがジェリー！これはWebポートフォリオだね！Webページも自分で作成したの？ ジェリー：そうよ。HTML（2）は思っていたよりも複雑だったけど、なんとか形になったわ。 トム：デザインしたものを作ってみたい、って言っていたものね。HTMLの書式は本を参考にしたの？ ジェリー：本も見たけれどアが書式のドキュメントをWebページとして公開しているの。それも合わせて参考にしたわ。このサイト内ではイがどのように表示されるかも試すことができて便利なの。 トム：この画像部分（3）の表示が崩れているみたいだね。 ジェリー：そうなの。原因が分からなくて困っているのよ。 トム：よし、僕がみてみるよ。 ジェリー：ありがとう。助かるわ。</p>
+<h3 id="問">問１</h3>
+<p>下線1のTwitterを始めとするWebサービスでは，Webサービスの機能を外部のプログラムから決まった形式で呼び出す機能を提供していることがある。この機能の名称として最も適当な物を選びなさい。</p>
+<h4 id="答え">答え</h4>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">API</span></code></pre></div>
+<h4 id="解説">解説</h4>
+<p>Webサービスでは、Webサービスの機能を外部のプログラムから決まった形式で呼び出す機能のことを <strong>API（Application Programing Interface）</strong> といいます。 <strong>ライブラリ</strong> と混同されることが多いのですが、利用者と作成者間における利用方式が違うので、そこを抑えることが重要です。両者の関係性を思い描くようにすると、理解が進みやすいでしょう。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">API</span></code></pre></div>
+<p>APIの作成者はWebサービスを運営している団体・個人であることが多いです。利用者は作成者が決めた方式で「このデータが欲しい」と問い合わせをします。その後、取得したデータを利用して自身のWebサービスやアプリケーションの処理を行います。</p>
+<div class="figure">
+<img src="../images/whatis_api.png" alt="whatis_api" />
+<p class="caption">whatis_api</p>
+</div>
+<p>大半の場合、<code>JSON</code>形式でデータのやりとりを行います。<code>JSON</code>（じぇいそん/正式名称はJavaScript Object Notation（じゃばすくりぷとおぶじぇくとのーてーしょん）とは、データを保存・交換するために利用されるテキスト（文字列）の保存形式のことです。基本的な形式は、中かっこ（ <code>{}</code> ）の中に <code>データの概要</code> <code>コロン（:）</code> <code>具体的なデータの内容</code> が記載されているものとなります。データの個数が増えてくると、かっこが入れ子構造になる・大かっこ（ <code>[]</code> ）が登場する、などの変化が現れます。JSON形式のAPIを試しに利用したい場合、テスト用APIを提供しているサイト（ <code>https://jsonplaceholder.typicode.com/</code> ）などを利用すると良いでしょう。</p>
+<h5 id="json形式で取得したapiのデータ例">JSON形式で取得したAPIのデータ例</h5>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;userId&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span>
+  <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;web-enginner test&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;completed&quot;</span><span class="fu">:</span> <span class="kw">true</span>
+<span class="fu">}</span></code></pre></div>
+<p>図書館の書庫から本を出してもらい（APIでデータを問い合わせる）、それを元に論文やレポートを作成する（APIのデータで後続の処理をする）と考えるとわかりやすいです。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">ライブラリ</span></code></pre></div>
+<p>ライブラリはある特定の機能だけを補助的に提供するプログラム群のことです。個人・団体を問わず多くの人がライブラリを作成・公開しています。利用者は公開しているライブラリを何らかの形でダウンロード・インストールし、自分のサービスに組み込んで利用しています。</p>
+<div class="figure">
+<img src="../images/whatis_library.png" alt="whatis_library" />
+<p class="caption">whatis_library</p>
+</div>
+<p>図書館（ライブラリの保管場所）へ行き、目的に合った本（ライブラリ）を選んで論文やレポートを作成する（自分のサービスを作る）と考えるとわかりやすいです。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">スクリプト</span></code></pre></div>
+<p><strong>スクリプト</strong> とは、短いプログラムのことを指しています。スクリプト（script）を直訳すると、<code>台本・脚本</code>という意味ですが、その名前の通り記述・実行することが容易であることが特徴です。</p>
+<p>これに関連して、 <strong>スクリプト言語</strong> （Scripting Language）というプログラミング言語のカテゴリも存在します。<code>スクリプト言語</code>はプログラムを動作させるときコンパイルを必要としない、という特徴を持っている言語です。JavaやC言語などはプログラムを実行する前に、作成したプログラムをコンピューターが認識できる形へ変換する必要があります。<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> しかし、スクリプト言語は<code>インタプリタ</code>（interpreter）というプログラムが存在します。<code>インタプリタ</code>がスクリプト言語をコンピューターが読み取れる形に変換してくれるため、人間がコンパイル作業を実施する必要がないのです。</p>
+<p>スクリプト言語の例として、次のプログラム言語が挙げられています。</p>
+<ul>
+<li>JavaScript（JavaScriptの一種であるTypeScriptはコンパイルする必要があります）</li>
+<li>Python（教育用としても利用されています）</li>
+<li>PHP（こちらも初心者におすすめされる言語です）</li>
+<li>VBScript（Excelマクロなどで利用されている言語です）</li>
+</ul>
+<p>スクリプト言語の一例として、スクリプト言語の代表選手であるJavaScriptをHTMLの中に記載しました。次のプログラムを実際に実行してみましょう。実行方法はプログラムのファイルをダウンロードし、普段インターネットを閲覧しているブラウザの上にドラック＆ドロップするだけです。ボタンを押すと、現在の日時が表示されるはずです。このとき、「プログラムをコンパイルして下さい」と指示していませんよね。インタプリタが「これは日時を算出するプログラムですよ」とコンピューターに伝えているのです。</p>
+<ul>
+<li>ダウンロード元URL（<code>https://github.com/MofuMofu2/TB5-techWords/blob/master/articles/src/html/1_1_3.html</code>）</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;title&gt;</span>Example JavaScript<span class="kw">&lt;/title&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;button</span><span class="ot"> type</span> <span class="ot">=</span> <span class="st">&quot;button&quot;</span><span class="ot"> onclick=</span><span class="st">&quot;document.getElementById(&#39;example&#39;).innerHTML = Date()&quot;</span><span class="kw">&gt;</span>今の日時は？&lt;/button&gt;
+  <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;example&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">フレームワーク</span></code></pre></div>
+<p><strong>フレームワーク</strong> とは、広義の意味では骨組み・構造のことです。Webアプリケーション開発時にこの言葉が出てきた場合は、アプリケーション開発に必要な部品と、それを呼び出すための仕組みを提供するソフトウェアのことを指しています。</p>
+<p>例えば、ログイン処理は多くのWebアプリケーションで求められる要件ですよね。これを毎回0から作成するのは時間がかかります。同じような仕組みで実装する訳ですから、1度作成した部品を再利用したくなります。これがWebアプリケーション開発においてフレームワークを利用したい理由です。</p>
+<div class="figure">
+<img src="../images/whatis_fw.png" alt="whatis_fw" />
+<p class="caption">whatis_fw</p>
+</div>
+<p>代表的なプロダクトを列挙します。名前を聞いたことがあるものも多いのではないでしょうか。</p>
+<ul>
+<li>Ruby on Rails</li>
+<li>Spring</li>
+<li>Django</li>
+<li>Lalavel</li>
+</ul>
+<h3 id="問-1">問２</h3>
+<p>下線2に関連して，HTMLのように文書の一部をタグと呼ばれる特別な書式で囲うことで文章の表現を記述する言語として正しいものを選びなさい。</p>
+<h4 id="答え-1">答え</h4>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">マークアップ言語</span></code></pre></div>
+<h4 id="解説-1">解説</h4>
+<p><strong>マークアップ言語</strong> は、文章の表現方法を記述するために考案された言語です。マークアップ言語に属する言語を挙げるので、共通点を探ってみると面白いでしょう。</p>
+<ul>
+<li>HTML（えいちてぃーえむえる/正式名称はHyperText Markup Language：はいぱーてきすと・まーくあっぷ・らんげーじ）</li>
+<li>Markdown（まーくだうん）</li>
+<li>TeX（てっく/てふ） [^tex]</li>
+<li>textile（てきすたいる）</li>
+</ul>
+<p>[^tex]： 読み方はどちらでも正しいです。LaTexときた場合、らてっく・らてふと読みます。</p>
+<p>マークアップ言語の代表例である<code>Markdown</code>の記述方法を参照してみましょう。この問題・解答の原稿もMarkdownで記述されています。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu">### 魔法つかいプリキュア！のメンバーを紹介するぜ！</span>
+
+1. <span class="fl">**みらい**</span>
+<span class="fl">2. *リコ*</span>
+<span class="fl">3. はーちゃん</span>
+<span class="fl">4. モフルン</span></code></pre></div>
+<p>文字を読むことはできますが、記号が邪魔で読みづらいですよね。Markdown対応エディタのプレビュー機能を使って参照すると、どうなるでしょうか？</p>
+<div class="figure">
+<img src="../images/maho_precure.png" alt="maho_precure" />
+<p class="caption">maho_precure</p>
+</div>
+<p>iPhoneのMarkdown対応エディタアプリ<code>1Writer</code>（URL： <code>https：//itunes.apple.com/jp/app/1writer-markdown-text-editor/id680469088?mt=8</code> ）で参照したときのキャプチャです。見やすく装飾されていることが確認できましたか？</p>
+<p>このように、マークアップ言語は文字を特定の記号で囲むことで、決まった装飾を施すことができるのです。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">スクリプト言語</span></code></pre></div>
+<p>問1で解説しているため、ここでは詳しく取り上げません。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">関数型言語</span></code></pre></div>
+<p><strong>関数型言語</strong> とは</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">オブジェクト指向言語</span></code></pre></div>
+<p><strong>オブジェクト指向言語</strong> とは</p>
+<h3 id="問-2">問３</h3>
+<p>アにはWebの規格を標準化を進める団体名が入るが、その名称として最も適当なものを選択しなさい。</p>
+<ol style="list-style-type: decimal">
+<li>Google</li>
+<li>Oracle</li>
+<li>XML</li>
+<li>W3C</li>
+</ol>
+<h4 id="答え-2">答え</h4>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">W3C</span></code></pre></div>
+<h4 id="解説-2">解説</h4>
+<p><strong>W3C</strong> はWebの標準規格を定める団体です。Webページの規格を統一しておく理由は、いつでもどこでも同じWebページが見えるようにする必要があるためです。</p>
+<p>日本とアメリカでは物の長さの単位が違いますよね。センチメートルをインチに変換するのは大変です。これと同じで、Webページの規格が国ごとに違っていた場合、アメリカのWebページを日本から参照することが不可能となってしまいます。 W3Cが定めた規格に沿ってWebページを構成すれば、このような問題を解消することができます。W3Cは、Web上で利用される技術を習得するためのチュートリアルページを作成しています（ <code>https://www.w3schools.com/default.asp</code> ）。言語学習時にはとても役立ちますので、覚えておくと良いでしょう。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Google</span></code></pre></div>
+<p>Webページの検索エンジンやメール機能を提供する大企業です。Androidを開発している企業でもあります。Googleのサービスは<code>Google Cloud Platform</code>というサービス上で運用されています。これをクラウドコンピューティングという形で提供していたりもします。これからもWeb技術の最先端を駆け抜ける企業であり続けるでしょう。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">Oracle</span></code></pre></div>
+<p><code>Oracle Database</code>や<code>Java</code>を開発している企業です。このように、ある特定の言語・ミドルウェア・サービス・PC機器を提供する企業のことを<code>ベンダー</code>と呼びます。Oracleはその代表格です。</p>
+<p>次のリストはOracleの提供しているサービスの一例です。</p>
+<ul>
+<li>Oracle Database（商業用のデータベース）</li>
+<li>Java（オブジェクト指向言語の1種）</li>
+<li>Virtual Box（1台のコンピューター上に複数のOS環境を構築するためのソフトウェア）</li>
+<li>Wercker（プログラムのコンパイルやテストを自動で実施できるCIツール）</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">XML</span></code></pre></div>
+<p><strong>XML（Extensible Markup Language）</strong> とは、マークアップ言語の一種です。XMLの特徴は自分でタグを作成できることと、Webページの作成以外でも利用できる言語だということです。例えば、Javaアプリケーションの階層の記述はXMLで記載されています。他には、ミドルウェアのログがXML形式で出力されていることもあります。</p>
+<p>XMLとHTMLは <code>SGML（Standard Generalized Markup Language）</code> から派生した言語です。HTMLはWeb上で文章を表示することに特化していますが、XMLは機能を拡張できるように改良されました。動物の進化と似ていますね。どちらもW3Cによって規格の標準化が進められています。</p>
+<h3 id="問4">問4</h3>
+<p>音声形式で情報を配布するものとして、最も適当なものを選択しなさい。</p>
+<h3 id="解答">解答</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">ポッドキャスト</span></code></pre></div>
+<h3 id="解説-3">解説</h3>
+<p>Webサイトの更新履歴を配信するためのファイルのことを、　<strong>フィード</strong> といいます。フィードを取得すると、Webサイトでどこが更新されたかを収集することができます。Webの記事をまとめているサイトは、この<code>フィード</code>を利用しています。この中でも、 <code>フィード</code> を利用して音楽や動画情報を配信する仕組みのことを <strong>ポッドキャスト（Podcast）</strong> といいます。Apple社が専用のポッドキャストを所有しているため、認知度はかなり高いフィードの形式と言えるでしょう。色々なPodcastが配信されているので、好きなものを探して視聴してみると良いでしょう。不定期配信の雑誌が音声購読されている、そんな気分を味わうことができます。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">RSSフィード</span></code></pre></div>
+<p><strong>RSSフィード</strong> （あーるえすえすふぃーど/正式名称はReally Simple Syndication：りありー・しんぷる・しんでぃけーしょん）とは、フィードの形式の１種です。<code>RDF</code>という言語で書かれた<code>RSS1.0</code>と、<code>XML</code>で書かれた<code>RSS2.0</code>が存在します。株式会社はてなが運営する<code>はてなブックマーク</code>（<code>http://b.hatena.ne.jp/</code> ）というサービスでは、各URLの末尾に <code>.rss</code> とつけると、RSS2.0形式のRSSフィードを参照することができます。</p>
+<div class="figure">
+<img src="../images/hatebu_rss.png" alt="hatebu_rss" />
+<p class="caption">hatebu_rss</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">SNS</span></code></pre></div>
+<p><strong>SNS</strong> （えすえぬえす/正式名称はSotial Networking Service：そーしゃるねっとわーきんぐさーびす）は、人と人とのつながりを支援するためのWebサービスの総称です。代表例をいくつかあげると、「おっ！それしってるがな！」となるかもしれません。</p>
+<ul>
+<li>Facebook</li>
+<li>Twitter</li>
+<li>LINE</li>
+<li>Instagram</li>
+<li>mixi</li>
+</ul>
+<p>LINEはチャットツールだからSNSじゃないのでは…？と思われる方もいらっしゃるかもしれません。しかし、LINEがニュースに上がるとき、SNSの１種として紹介されています。特定個人とのチャット以外にも、タイムラインで近況報告をする機能や<code>Face Play</code>（ふぇいすぷれい）という顔の動きで点数をきそうゲームがあるのはご存知でしょうか。これらの機能は人同士のつながりを促進するために存在しています。よって、LINEはSNSの１種なのです。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">検索エンジン</span></code></pre></div>
+<p><strong>検索エンジン</strong> とは、入力した文字情報を元に情報を探し出して表示するシステムの名称です。問３の選択肢に<code>Google</code>が出てきましたが、Googleは<code>Google Search（ぐーぐるさーち）</code>という検索エンジンを運営しています。「OK、Google！ リコちゃんについて調べて」などと話しかけたとき、裏では検索エンジンを利用してリコちゃんについての情報収集を行なっているのです。</p>
+<p>検索エンジンを運営しているサービスは、Google以外にも存在しています。例をいくつか挙げておきます。個人で利用する場面は少ないかもしれませんが、会社によってはPC内で利用できる検索エンジンが制限されていることもあります。</p>
+<ul>
+<li>Bing</li>
+<li>Yahoo!</li>
+</ul>
+<p>検索エンジンは <code>ロボット型</code> と <code>ディレクトリ型</code> の2種類が存在します。 <code>ロボット型</code> はプログラムによってWeb上の情報を収集し、カテゴリー別に保管している検索エンジンです。Googleはロボット型の検索エンジンを採用しています。「SEO（検索エンジン最適化）を高めて自サイトの認知度をあげましょう！」という広告を見かけた場合、9割方はGoogle Analytics（ぐーぐるあなりてぃくす） <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> のプログラムに検出されやすくなる（=ロボット型の検索エンジンに取集されやすくなる）Webページの作り方を伝授します、というのと同義です。</p>
+<p>一方、 <code>ディレクトリ型</code> は人間がWebページの情報をカテゴリー別に整理・保存している検索エンジンです。手間はかかりますが、人間によってWebページが閲覧されているので意味のあるカテゴリ分けがされています。Yahoo!はディレクトリ型の検索エンジンです。</p>
+<p>Webエンジニアの人は、Googleを検索エンジンとして利用していることが多いです。そのせいか、ちゃんと調査したかを質問するネットミームの中に「それ、ググった？」「GGKS（ググれカス）」という言葉が存在しています。Googleで検索した？という意味ですので、覚えておきましょう。ただし、人にカスと言ってはいけないと思います。</p>
+<h3 id="問-3">問５</h3>
+<p><code>イ</code> にはHTMLの体裁を表現する記述方法の名称が当てはまるが、この名称として最も適当なものを選択しなさい。</p>
+<ol style="list-style-type: decimal">
+<li>HTML</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>Java</li>
+</ol>
+<h4 id="答え-3">答え</h4>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">CSS</code></pre></div>
+<h4 id="解説-4">解説</h4>
+<h3 id="問-4">問６</h3>
+<p>ジェリーはポートフォリオの中で、非可逆圧縮方式の静止画像を使用している。このとき、ジェリーが使用した画像の保存形式として最も適当なものを選択しなさい。</p>
+<h4 id="答え-4">答え</h4>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">JPEG</span></code></pre></div>
+<h4 id="解説-5">解説</h4>
+<p><strong>JPEG</strong> とは、画像を保存するための拡張子の一種です。　<strong>拡張子</strong> とは、ファイルの保存形式のことです。拡張子ごとに音楽データを保存するもの、テキストを保存するもの、プログラムを保存するもの…と役割がわかれています。JPEG拡張子は <code>.jpg</code> ・ <code>jpeg</code> という名前で画像を保存しています。JPEGは <strong>非可逆圧縮方式</strong> でデータを保持しています。よって正解は<code>4</code> となります。 <strong>非可逆圧縮方式</strong> とは、ファイルのサイズを小さくする代わりに、データの一部を削除してしまう方式のことです。ファイルのサイズが小さいので、多くの画像ファイルを保存できます。しかし、データを一部消して保存するため、画質は悪くなります。元の拡張子に戻したとしても、綺麗な状態に戻すことはできません。</p>
+<p>ちなみに、iPhoneの写真モードでは<code>.jpg</code>方式で画像が保存されています。小さいスマートフォンにたくさん画像を詰め込んでおく必要があるからなのでしょう。</p>
+<!-- スクリーンショット -->
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">PNG</span></code></pre></div>
+<p><strong>PNG</strong> とは、画像を保存するための拡張子の一種です。<code>JPEG</code>と違う点は、 <strong>可逆圧縮方式</strong> を使ってデータを保存する点です。 <strong>可逆圧縮方式</strong> は、データの欠けがない状態でデータを圧縮する方式のことです。データの欠けがないため、綺麗な画像を保存することができます。その代わり、データの容量は大きくなってしまいます。</p>
+<p>背景が透明な画像を利用したい場合、<code>PNG</code>形式でファイルを保存することが望ましいでしょう。Webページに利用されている画像の多くは<code>.png</code>形式で保存されています。これは、プラウザに付属しているディベロッパーツールで参照することができます。</p>
+<!-- スクリーンショット -->
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">GIF</span></code></pre></div>
+<p><strong>GIF（Graphics Interchange Format）</strong> とは、画像を保存するための拡張子の一種です。<code>ジフ</code>が正しい読み方とされています。GIFの大きな特徴として、複数枚の画像を1つのファイルに保存することで、短いアニメーションが作成できる（GIFアニメーション）が挙げられます。SNSやLINEスタンプで画像が動いているものが多く見られますが、あれがGIFアニメーションです。</p>
+<p>GIFは可逆圧縮方式でデータを保存することができますが、256色以下の画像のみ扱うことができます。制限が付いている代わりに、他の画像拡張子では表現できない動きを扱うことができる、と考えると良いでしょう。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">ai</span></code></pre></div>
+<p><strong>ai</strong> は <strong>Adobe Illustrator</strong> というイラストを描画するソフトで作成した作品を保存するための拡張子です。イラスト描画ソフトは、独自の拡張子を用いてファイルを保存していることが多いようです。</p>
+<h3 id="問-5">問７</h3>
+<p>Webページを閲覧するために利用するアプリケーション名として最も適当なものを選択しなさい。</p>
+<h4 id="答え-5">答え</h4>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Webブラウザ</span></code></pre></div>
+<h4 id="解説-6">解説</h4>
+<p><strong>Webブラウザ</strong> とは、Webページ内に存在する<code>ハイパーテキスト</code> [^h] を解釈し、表示するためのアプリケーションです。例えば、次のようなHTML・CSSがあったとします。</p>
+<p>このままでも何が書いてあるか読めなく…はないのですが、読みやすいとは言いづらいですよね。そこで、このページをブラウザを通して参照してみます。</p>
+<!-- スクリーンショットを記載する -->
+<p>かなり読みやすい形になりました。これが、Webブラウザの役割です。</p>
+<p>Webブラウザには種類があり、種別ごとに表示され方が違う…などということもあります。ブラウザ特有の不具合が発生することもあるようで、Webページを作るのも簡単ではなさそうです。</p>
+<p>[^h]： HTMLの解説を参照してください</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">エディタ</span></code></pre></div>
+<p><strong>エディタ</strong> とは、コンピューター上で文字だけのファイルを作成・編集するためのアプリケーションです。 <strong>テキストエディタ</strong> と呼ばれていることもありますが、この本では<code>エディタ</code>表記で統一することにします。プログラムやWebページ（HTML・CSS）をエディタで作成すると、<code>シンタックスハイライト</code> という色でプログラムの内容をわかりやすくするサポートの拡張が受けられます。他にもプログラムの見た目を自動で整形したり、文字を検索・置換する機能も提供しています。Webに関わる何かを開発するのであれば、エディタを利用することを強くお勧めします。 [^2]</p>
+<p>[^2]： 前職でコンフィグファイルをWindowsのメモ帳で編集しているツワモノがいました。人の趣味・思考なので自由にしてもらえばと思いますが、便利なものがあるのでうまく乗り換えた方が良いのでは…。</p>
+<p>エディタの例をいくつか挙げます。使い方ページやブログでのレビューを参考に、自分にあったお気に入りのものを使いましょう。エディタによって得意な言語・苦手な言語もあるので、そのあたりも含めて検討すると良さそうです。ライセンスが必要なものはきちんと購入しましょう。それと、<code>Vim</code>と<code>Emacs</code>は利用者の愛着がかなり強く、一種の宗教戦争状態になっています。言動を間違えると戦争が始まってしまうので気をつけましょう。</p>
+<ul>
+<li>Visual Studio Code</li>
+<li>Atom</li>
+<li>Vim</li>
+<li>Emacs</li>
+<li>Sublime Text</li>
+<li>Brakets</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">IDE</span></code></pre></div>
+<p><strong>IDE</strong> は、エディタの機能とプログラムを実行する環境が1つのアプリケーションにセットになっているものです。例えばJavaのアプリケーションを実行する際は、3つのステップを踏む必要があります。</p>
+<ol style="list-style-type: decimal">
+<li>Javaプログラムを記載し、<code>.java</code> 拡張子で保存する。</li>
+<li>保存したファイルを<code>.jar</code>ファイルに変換し、コンピューターが読み取れる形式に変換する。（<code>コンパイル</code>）</li>
+<li>変換したものを実行する</li>
+</ol>
+<p>IDEを使うと、工程が1つ減ります。</p>
+<ol style="list-style-type: decimal">
+<li>Javaプログラムを記載し、<code>.java</code> 拡張子で保存する。</li>
+<li>IDEの機能でプログラムを実行する。</li>
+</ol>
+<p>変換作業がなくなるだけでも楽ができますね。さらに、IDEはWebアプリケーションの動作に必要な環境を擬似的に構築・実行することが可能です。プログラムを作成してサーバーにアップロード…という手間を省いて動作を確認することができるのです。便利ですね。</p>
+<p>ただし、JavaScriptやHTMLなどはブラウザを通してプログラムを実行することができます。開発する対象物や環境に応じてIDEとエディタを使い分けると良いでしょう。代表的なIDEも合わせて紹介します。</p>
+<ul>
+<li>Eclipse</li>
+<li>IntelJ</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">コンテナ</span></code></pre></div>
+<p><strong>コンテナ</strong> はアプリケーションの動作に必要な物プログラム（設定ファイル・ライブラリを含む）全てを、実行ファイルとしてまとめた仕組みの事を指します。この問題ではWebページを閲覧するためのアプリケーションは何か？を問うているため、Webページの実行環境であるコンテナは選択肢の対象外となるのです。</p>
+<p>コンテナの特徴は、コンテナアプリケーションを動作させているOSを利用して動作する事です。コンテナ技術の比較対象となる<code>ハイパーバイザ</code>（Hyper Visior）では、アプリケーションの実行環境用のOSをハイパーバイザ環境に構築する必要があります。2つの違いを図に示しました。</p>
+<!-- 図を入れる -->
+<p>コンテナは、<code>Docker</code>社が提供する<code>Docker</code>というツールが有名です。この問題では</p>
+<p>コンテナを利用したアプリケーション実行環境の構築が便利ですよ、と言われている理由をいくつか挙げます。</p>
+<ul>
+<li>アプリケーション実行環境の再配布<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>がしやすい</li>
+<li>アプリケーションの動作をテストする・アプリケーションを公開する動作環境を作成しやすい</li>
+</ul>
+<h2 id="第問-1">第２問</h2>
+<p>次の文章を読み，下記の問い（問1〜8）に答えよ。（配点：40点）</p>
+<p>2018年2月、Googleはアで接続しているWebページ・WebアプリケーションのURLにアクセスすると、「このWebページは安全ではありません」という警告を表示するように仕様を変更すると発表した。イからアでアクセスしている場合、サイトの内容に関わらず警告が表示される。このため、多くのサイト管理者は対応を余儀なくされている。</p>
+<h3 id="問-6">問１</h3>
+<p>Webアプリケーションのデータを送受信するとき、3ウェイハンドシェイクを用いて通信している。そのとき2番目に発生する通信は何か。最も適当なものを選択しなさい。</p>
+<ol style="list-style-type: decimal">
+<li>ACK</li>
+<li>SYN + ACK</li>
+<li>SYN</li>
+<li>FIN</li>
+</ol>
+<h3 id="答え-6">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">SYN + ACK</span></code></pre></div>
+<h3 id="解説-7">解説</h3>
+<p>私たちがWebページやWebアプリケーションの情報を見ているとき、裏では <strong>TCP</strong> （てぃーしーぴー/正式名称はTransmission Control Protocol：とらんすみっしょん・こんとろーる・ぷろとこる）というプロトコルで通信が行われています。<strong>プロトコル</strong> とは、ネットワーク上に存在する機器が通信をする際に利用するための決まった手順の事をいいます。機器同士が通信する方法の規格、と考えると良いでしょう。世界共通言語がないとコミュニケーション時に困ってしまうのと同様、Webの世界にも世界共通言語が存在するのです。TCPはその世界共通言語、というわけです。</p>
+<p>TCP通信が開始されたとき、まず最初にサーバーとクライアント間で通信テストを行います。相手が存在する事を確認した後にWebページの送信を行うのです。これを <strong>3ウェイハンドシェイク</strong> といいます。3はスリーと読まれることが多いですね。この問題は3ウェイハンドシェイクの2番目にやり取りされる内容は何ですか？ということを問うているのでした。</p>
+<p>それでは、3ウェイハンドシェイクの流れを確認してみましょう。1から3が、3ウェイハンドシェイクの流れです。</p>
+<ol style="list-style-type: decimal">
+<li>クライアントからサーバーに対してSYNパケットが送られる</li>
+<li>サーバーからクライアントにSYN + ACKパケットが返ってくる</li>
+<li>クライアントからサーバーにACKパケットが送られる</li>
+<li>Webの内容を送受信する</li>
+</ol>
+<p>よって、正解は2番となります。</p>
+<!-- 生きてますかを入れる -->
+<p>FINパケットは通信を終了（切断）したいときに送受信されるパケット名です。</p>
+<h3 id="問-7">問２</h3>
+<p>Webアプリケーション自身がエラーを応答するときに表示されるエラー番号として最も適当なものを選択しなさい。</p>
+<h3 id="答え-7">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">500</span></code></pre></div>
+<h3 id="解説-8">解説</h3>
+<p>Webページの表示をする際、何かしらの原因で不具合が生じることもあるかもしれません。不具合にも一定の傾向がありますから、決まったエラー番号にしておけば、調査が楽になるかもしれません。</p>
+<p>そこで、IETF（あいいーてぃーえふ/正式名称はInternet Engineering Task Force：いんたーねっとえんじにありんぐたすくふぉーす）という団体が、通信の状態に番号をつけましょう！という内容の論文をいくつか発表しました（例： <code>https://tools.ietf.org/html/rfc7231</code> ）。HTTP通信をする場合、この論文に沿って通信状態に番号がついています。これを <code>ステータスコード</code> といいます。</p>
+<p>もしHTTP通信中に不具合が起こった場合、<code>ステータスコード</code> を確認すると不具合の箇所を絞り込むことが可能です。ステータスコード200・400・403・404・500は登場頻度が多いので、まずはここから意味を抑えておくと良いでしょう。ステータスコードの例を表に記載しましたので、合わせて確認してください。</p>
+<h3 id="問-8">問３</h3>
+<p>選択肢の中で，HTTPリクエスト・レスポンス両方に含まれているヘッダーフィールドはどれか。</p>
+<h3 id="答え-8">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">エンティティ</span></code></pre></div>
+<h3 id="解説-9">解説</h3>
+<p><strong>ヘッダーフィールド</strong> とはHTTP通信時にどんなやり取りがされているかを記録している場所です。 <strong>エンティティヘッダーフィールド</strong> は、HTTPリクエスト・レスポンス、どちらのときも記載されるヘッダーフィールドです。</p>
+<!-- 実際にみてみよう！！！！！ -->
+<p><strong>リクエスト（request）</strong> とは、クライアントからサーバーにデータを要求する処理のことです。 <strong>レスポンス（response）</strong> はこの逆で、サーバーがクライアントにデータを返却する処理のことです。各ヘッダーフィールドにはこの情報が記載されています。</p>
+<p>…とか言われても訳がわかりませんね。本題からそれますが、<code>初心者向け！</code>とか謳っているWebページでこの説明されたら「初心者向けちゃうやんけ！！！！！！」と言いたくなりますよね（10敗）。画面を叩き割りたくなるってもんです。この本を破り捨てられると困るので、もう少し詳しく説明します。</p>
+<p>まず、このような順番で考えることにしましょう。</p>
+<ol style="list-style-type: decimal">
+<li>英単語<code>request</code>の意味はなんでしょう？</li>
+<li>英単語<code>response</code>の意味はなんでしょう？</li>
+<li>誰が誰に<code>request</code>するのでしょう？</li>
+<li>誰が誰に<code>response</code>するのでしょう？</li>
+</ol>
+<p>英単語<code>request</code>を辞書で引くと、</p>
+<ul>
+<li>要求する</li>
+<li>お願いする</li>
+<li>頼む</li>
+</ul>
+<p>と出てきます。動詞（V）ですね。 リクエストは<code>なにかを頼む</code>という動作だ、と推測できます。</p>
+<p>今度は<code>response</code>を辞書で引いてみます。</p>
+<ul>
+<li>返答</li>
+<li>反応</li>
+<li>応答</li>
+</ul>
+<p>こちらは名詞（n）です。レスポンスは<code>返事</code>のことを示している、と推測できます。</p>
+<p>今度は<code>誰が、誰に</code>という点を考えてみましょう。登場人物は2人です。</p>
+<ul>
+<li>Webページを見たい人</li>
+<li>Webページの内容を提供する人</li>
+</ul>
+<p>リクエスト（request）はなにかを頼むという動作です。Webの世界で、お願いする動作をしそうな人は誰でしょうか？</p>
+<p>お願いしそうな人といえば、 <strong>Webページを見たい人</strong> ですよね。「ページの内容をくれ！」とお願いしなければ、Webページの中身を閲覧することはできません。 ここから、Webページの内容を提供する人はお願いされる立場だ、と推測できます。</p>
+<p>今度はレスポンス（response）も推測してみましょう。Webの世界で返答・反応しそうな人は誰でしょう？</p>
+<p>何かをお願いされた人は、「やりましたよ/できませんね」と返事をしないとダメですよね。ということは、 <strong>Webページの内容を提供する人</strong> が返答・反応する人、と推測できます。返答する相手は、お願いしている人ですよね。よって、Webページを見たい人に返事をする、と推測できます。</p>
+<p>最後に、登場人物に専門用語を当てはめてみましょう。</p>
+<ul>
+<li>Webページを見たい人のパソコン＝クライアント</li>
+<li>Webページの内容を提供する人のパソコン＝サーバー</li>
+</ul>
+<p>そして、説明を再度確認してみます。</p>
+<blockquote>
+<p>リクエスト（request）とは、クライアントからサーバーにデータを要求する処理のことです。レスポンス（response）はこの逆で、サーバーがクライアントにデータを返却する処理のことです。</p>
+</blockquote>
+<p>今度は、なるほど感を感じるのではないでしょうか？このように、技術用語は英単語が元になっていることが多いです。意味不明なときは、英単語の意味と役割から内容を推測してみましょう。</p>
+<h3 id="問4-1">問4</h3>
+<p><code>イ</code> にはWebページやWebアプリケーションを利用するパソコンという意味の用語が入る。最も適当な用語を選択しなさい。</p>
+<h3 id="答え-9">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">クライアント</span></code></pre></div>
+<h3 id="解説-10">解説</h3>
+<p>WebページやWebアプリケーションを利用するパソコンを <strong>クライアント</strong> といいます。 <strong>ユーザー</strong> はWebページやWebアプリケーションを利用する人の事を指します。リクエスト・レスポンスの解説は問５を参照してください。</p>
+<h3 id="問-9">問５</h3>
+<p>Webページの内容を生成する役割を持つミドルウェアや処理形式の名称として最も適当なものを選択しなさい。</p>
+<h3 id="答え-10">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">Webアプリケーションサーバー</span></code></pre></div>
+<h3 id="解説-11">解説</h3>
+<p>まずはこの図を見てください。これはよくあるブログを運営するためのWebアプリケーション構成図です。<code>構成図</code>とは、アプリケーションや機械に必要な要素や並び方を図解したものです。<code>ラック構成図</code>という文言だと、サーバーをしまっておく棚＝ラック内の並びを図解している、という意味になります。</p>
+<p>各要素の役割を説明する前に、どのような流れで処理がされるかを説明します。</p>
+<ol style="list-style-type: decimal">
+<li>クライアントが<code>もふもふブログ</code>の<code>uraniai</code>ページにアクセスする</li>
+<li>Webアプリケーションサーバーが<code>uranai</code>ページに必要な情報をDBサーバーから取得する</li>
+<li>2で取得した情報を使ってWebアプリケーションサーバーは動的に変化する部分を作成する</li>
+<li>Webサーバーができあがった<code>uraniai</code>ページをクライアントに返却する</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">DBサーバー</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">Webサーバー</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">NAS</span></code></pre></div>
+<p>問題２の問６で解説しているため、詳しくはそちらを参照してください。</p>
+<h3 id="問-10">問６</h3>
+<p><code>ア</code> にはインターネット通信で利用される暗号化されていないプロトコル名が入る。最も適当なものを選択しなさい。</p>
+<h3 id="答え-11">答え</h3>
+<pre><code>4. HTTP</code></pre>
+<h3 id="解説-12">解説</h3>
+<p>まず<code>プロトコル</code>ですが、この説明は第2問の問1を参照してください。</p>
+<p><strong>HTTP</strong> （えいちてぃーてぃーぴー/正式名称はHypertext Transfer Protocol：はいぱーてきすととらんすふぁーぷろとこる）とは、HTMLなどのWeb文章をやり取りするためのプロトコルです。HTTP通信の特徴として、通信内容が暗号化されていないことが挙げられます。次のURLのどれかにアクセスしてみてください。ブラウザのURLが記載されている欄に注目します。ちなみに筆者はGoogle Chromeを利用しています。</p>
+<ul>
+<li><code>http：//www.mlit.go.jp/</code></li>
+<li><code>http：//www.mbga.jp/_game_intro?game_id=12017647</code></li>
+<li><code>http：//www.sagawa-exp.co.jp/send/howto-search.html</code></li>
+</ul>
+<div class="figure">
+<img src="../images/国土交通省.png" alt="某省のページ" />
+<p class="caption">某省のページ</p>
+</div>
+<p><code>保護されていない通信</code> と出ていますね。問2の文章はこれのことを示しているのです。他のブラウザで見た場合、次の画像のように表示されます。筆者はSafariを使っています。</p>
+<div class="figure">
+<img src="../images/国土交通省.png" alt="某省のページ_Safari" />
+<p class="caption">某省のページ_Safari</p>
+</div>
+<p>アドレスから<code>http</code> という文字が省略されているようです。</p>
+<p>一方、<strong>HTTPS</strong> （えいちてぃーてぃーぴーえす/正式名称はHypertext Transfer Protocol Secure：はいぱーてきすととらんすふぁーぷろとこるせきゅあ）のURLを持つサイトはどうでしょうか？次のURLのどれかにアクセスしてみましょう。</p>
+<ul>
+<li><code>https：//techbookfest.org/</code></li>
+<li><code>https：//www.shippo.co.jp/neko/</code></li>
+<li><code>https：//mofumofu2.github.io/hiyokoMofu-fm/</code></li>
+</ul>
+<p>Chromeでアクセスしたとき、筆者の手元ではこのようにURLが見えています。</p>
+<div class="figure">
+<img src="../images/Chrome_ひよこなもふもふちゃんと技術同人誌_fm.png" alt="hiyokomofu_chrome" />
+<p class="caption">hiyokomofu_chrome</p>
+</div>
+<p>Safariでアクセスしたときは、このようになっています。 <img src="../images/Safari_ひよこなもふもふちゃんと技術同人誌_fm.png" alt="hiyokomofu_safari" /></p>
+<p><code>保護されている通信</code>と記載がある・鍵マークが付いているなど、何かしら守られていそうな雰囲気ですね。HTTPSは <code>Secure</code> の名前通り、Web文章をやりとりするときに暗号化の処理をおこなってくれるプロトコルです。 <code>HTTP over SSL/TLS</code> と呼ばれていたりもします。 <code>SSL/TLS</code> （えすえすえる・てぃーえるえす）は暗号化方式の名称で、</p>
+<ul>
+<li>盗聴</li>
+<li>Web文章の改ざん</li>
+<li>Webサーバーのなりすまし</li>
+</ul>
+<p>の3つを防ぐことができます。3つ目を実施するためには、<code>SSL証明書</code>というものを利用します。SSL証明書をみれば、「おたくは本物ですね」とブラウザが解釈することができるのです。SSL証明書の発行には、<code>認証局</code>と呼ばれる発行業者に認められる必要があります。好き勝手にSSL証明書を作成できないようになっているため、インターネットの平和は守られるというわけです。</p>
+<p>じゃあみんなHTTPSのサイトにすればいいやん！って話になるはずですよね。そうはなっていない理由として、</p>
+<ul>
+<li>SSL証明書の発行にお金がかかる</li>
+<li>証明書を発行して適用できるエンジニアが（サイトを運用する企業・団体の中に）いない</li>
+<li>証明書の利用期限が切れてしまったが更新していない</li>
+</ul>
+<p>…などという事情があります。証明書にも格があり、安全性に応じて費用もそれなりに発生します。要件に応じて証明書を選定・適用するためには、インターネット通信の仕組みをある程度理解していないと難しそうです。</p>
+<p>とはいえもう平成も終わるわけですから、Webサイトを運営する皆様方はどうか予算を出してHTTPS化対応を進めていただきたいものです。</p>
+<!-- 渋川さんの本をよみつつ解説をブラッシュアップする -->
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">POP</span></code></pre></div>
+<p><strong>POP</strong> （ぽっぷ/正式名称はPost Office Protocol：ぽすとおふぃすぷろとこる）とは、メールサーバーから自分のパソコンにメールの内容を送るときに利用されるプロトコルです。郵便受けに自分のメールをPostしてもらう、と考えるとわかりやすいでしょう。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">SMTP</span></code></pre></div>
+<p>メールを送信するときは <strong>SMTP</strong> （えすえむてぃーぴー/Simple Mail Transfer Protocol：しんぷるめーるとらんすふぁーぷろとこる）というプロトコルを利用します。 <code>POPの逆</code> と覚えておくとよいでしょう。</p>
+<h3 id="問-11">問７</h3>
+<p>HTTPS通信プロトコルとして最も適当なものを選択しなさい。</p>
+<h3 id="答え-12">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">TCP/IP</span></code></pre></div>
+<h3 id="解説-13">解説</h3>
+<p><strong>TCP/IP</strong>（てぃーしーぴーあいぴー/正式名称はTransmission Control Protocol/Internet Protocol）とは、インターネット上で利用されるプロトコルの規格のことです。TCP/IPは <strong>TCP</strong> プロトコルと <strong>IP</strong> プロトコルと <strong>HTTP</strong> プロトコルと <strong>HTTPS</strong> プロトコルと…</p>
+<p>はい、もういいですね。<code>TCP/IP</code> はインターネット通信で使われるプロトコルたちの総称なのです。<code>緑黄色野菜</code>がβカロテンを多く含む野菜（ニンジン・かぼちゃ・トマト・クレソン...etc）の総称なのと一緒です。</p>
+<p><code>プロトコル</code>の説明は、第2問の問1を参照してください。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">IPsec</span></code></pre></div>
+<p><strong>IPSec</strong> （あいぴーせっく/正式名称はSecurity Architecture for Internet Protocol：せきゅりてぃあーきてくちゃふぉあいんたーねっとぷろとこる）とは、暗号技術を利用して通信内容を保護することができるプロトコルです。</p>
+<!-- 複雑なのでどうするか迷うもん -->
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">NAS</span></code></pre></div>
+<p><strong>NAS</strong> （なす/正式名称はNetwork Attached Storage：ねっとわーくあたっちどすとれーじ）とは、ネットワークに接続して利用するタイプのファイルサーバーです。<code>ファイルサーバー</code> とは、ファイルを保管・共有するための共有スペースのことです。Google Drive・iCloud・EverNoteなど、ファイルをインターネット上に保存できる仕組みを思い浮かべていただくと、NASの役割は理解しやすいです。</p>
+<p>ファイルサーバーが存在しない場合、自分の作ったねこちゃんの絵を共有するためにはメールか何かで送信する必要がありますね。これでは絵を描く人・確認する人どちらも面倒です。ファイルサーバーがあれば、修正を施したときにファイルを再度置き直せば良いですし、確認する側はファイルサーバーの内容をチェックすれば良いだけです。やったね！…という環境を、インターネット上に作りますからね、というのがNASくんの役割です。</p>
+<p>企業などで、情報を自身のネットワークだけに隠しておきたい場合、インターネット上で提供されているファイルサーバーを使われると困ってしまいます。そこでNASを準備して、そこに秘密のファイルを隠しておく、といった使い方がされたりします。個人で利用することは少ないのですが、例えばアニメの録画を自前のNASに保存する、なんて人もいるようですよ。<code>NAS アニメ録画</code> で検索検索！</p>
+<ol start="4" style="list-style-type: decimal">
+<li>FTP</li>
+</ol>
+<p><strong>FTP</strong> （えふてぃーぴー/正式名称はFile Transfer Protocol：ふぁいるとらんすふぁーぷろとこる）とは、コンピューター同士の間でファイルを送受信するときに利用されるプロトコルの名前です。<code>FTP入稿</code>という言葉を聞いたことはありますか？同人誌を印刷したいナ〜というときに、出版社の比較をしますよね。そのとき「ご入稿はFTP入稿をご利用ください」と書いてある印刷所さんもあるのです。<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>原稿のデータをフォームから送信すると、同人印刷所さんにデータが届きます。このときに使われているのが<code>FTP</code>というプロトコルなのです。</p>
+<p>ただし、<code>FTP</code>プロトコルには問題を抱えています。なんと、通信の内容が暗号化されていないのです。つまり、他の人がプロトコルの内容を観察することができるのです。これは困りますね。同人データならまだ秘密の情報は存在しません<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>。しかし、今度出す新商品の企画案だった場合はどうでしょうか。FTPを使ってやりとりをした場合、ライバル企業に盗み見されてしまうかもしれないのです。困った！</p>
+<p>…ということで、 <strong>SCP</strong> （えすしーぴー/正式名称はSecure Copy Protocol：せきゅあこぴーぷろとこる）や <strong>SFTP</strong> （えすてふてぃーぴー/正式名称はSecure File Transfer Protocol：せきゅあふぁいるとらんすふぁーぷろとこる）といったファイルを暗号化しつつ、かつコンピューター同士で転送を行うプロトコルを使うのが主流となっています。送信時にファイルの内容を暗号化してしまうので、他の人がプロトコルの中身を見ようとしても謎の文字列しか見えない、というわけですね。</p>
+<h3 id="問8">問8</h3>
+<p>Webアプリケーションに対する負荷を調整するための機材名称として最も適当なものを選択しなさい。</p>
+<h3 id="答え-13">答え</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">ロードバランサー</span></code></pre></div>
+<h3 id="解説-14">解説</h3>
+<p><strong>ロードラバランサー</strong> は、Webアプリケーションに対する負荷を適切な数値に保つために使用される機器です。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">LAMP</span></code></pre></div>
+<p>LAMP（らんぷ）とは、</p>
+<ul>
+<li>Linux（りなっくす）</li>
+<li>Apache（あぱっち）</li>
+<li>MySQL（まいえすきゅーえる）</li>
+<li>PHP（ぴーえいちぴー）</li>
+</ul>
+<p>で構成されているWebアプリケーションの総称です。問題2の問6でも出てきた<code>緑黄色野菜</code>と同じような扱いです。 Wordpress（わーどぷれす）は、LAMP構成の代表選手です。Webサイトを作成・運営ができるアプリケーションです。記事の作成はWordpressの管理画面から行うことができますし、ブログの見た目をHTML・CSSなどを用いてカスタマイズすることも可能です。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">lint</span></code></pre></div>
+<p><strong>lint</strong> （りんと）とは、主にC言語で作成されたプログラムの内容が正しくできているのか？を検査するためのプログラムです。ただし、最近は言語用のlintツールが登場しているため、 <code>lint</code> という文字が登場した場合「何かしらのプログラムを検査するツールかな」と思っていただくのが良いと思います。いくつか例をあげておくので、自分のお好きな言語で取り入れてみるのはいかがでしょうか？同じ言語でもlintツールが複数開発されている場合もありますし、あなただってlintツールを作成できるかもしれませんよ。</p>
+<ul>
+<li><a href="https：//eslint.org/">ESLint/JavaScript用のlintツール</a></li>
+<li><a href="http：//docs.rubocop.org/en/latest/">RuboCop/Ruby用のlintツール</a></li>
+<li><a href="https：//www.pylint.org/">Pylint/Python用のlintツール</a></li>
+<li><a href="https：//github.com/golang/lint">Golint/Go用のlintツール</a></li>
+<li><a href="https：//errorprone.info/">Error Prone/Java用のlintツール</a></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">4. <span class="fl">Telnet</span></code></pre></div>
+<p><strong>Telnet</strong> （てるねっと）とは、</p>
+<!-- インフラエンジニアの教科書あたりを参考にする -->
+<h2 id="第問-2">第３問</h2>
+<p>次の文章を読み，下の問いに答えよ。（配点：15点）</p>
+<p>あるコミュニティで，持ちまわりで勉強会を主催することになった。このとき，勉強会の運営スタッフを毎回ランダムで選出したい。 そこで，簡易的なWebシステムを作成することになった。必要な機能は次の通りである。</p>
+<ul>
+<li>スタッフメンバーの登録機能</li>
+<li>勉強会ごとのスタッフメンバー選出機能</li>
+<li>スタッフメンバーごとにスタッフ回数を参照する機能</li>
+</ul>
+<h3 id="問-12">問１</h3>
+<p>このWebシステムを構築するために必要な構成を作図しなさい。このとき，次の単語を最低１回ずつ使用すること。構成図に具体的なサービス名は記載しないこと。 例）MySQLを構成図に加えたい場合<code>RDB</code>と記載する。（配点：8点）</p>
+<ul>
+<li>Webアプリケーションサーバー</li>
+<li>Webサーバー</li>
+<li>RDB</li>
+<li>ロードバランサ</li>
+<li>ブラウザ</li>
+</ul>
+<h3 id="解答例">解答例</h3>
+<p>採点ポイントを挙げますので、ご自身の作品と照らし合わせつつ採点を実施してください。<code>線で結ばれている</code>は直線一本でも良いです。1項目ができた場合、2点を加算してください。</p>
+<ol style="list-style-type: decimal">
+<li>WebアプリケーションサーバーがWebサーバーと同じサーバーに存在する、もしくはロードバランサ→Webアプリケーションサーバーの順になっていないこと</li>
+<li>Webサーバーがロードバランサと線で結ばれていること</li>
+<li>WebアプリケーションサーバーとDBが線で結ばれていること</li>
+<li>ロードバランサとブラウザが線で結ばれていること</li>
+</ol>
+<h3 id="解説-15">解説</h3>
+<p>Webアプリケーションの通信の流れが理解できているか？という問題です。問2の問題8にも出てきた<code>LAMP</code>構成になるべく寄せて出題してみました。各単語の役割を再度チェックしてみましょう。特に <code>Webアプリケーションサーバー</code> と <code>Webサーバー</code> は役割を混同しやすいので注意が必要です。「これなんだっけかな〜」と思ったら、問1・問2の問題に戻って確認してみましょう。</p>
+<ul>
+<li>Webアプリケーションサーバー</li>
+<li>ページの内容を生成する</li>
+<li>Webサーバー</li>
+<li>URLに応じたページをクライアントに返却する</li>
+<li>RDB</li>
+<li>データを表形式で保存する</li>
+<li>ロードバランサ</li>
+<li>データの通信量を制限する/特定のURLを別のURLに転送する</li>
+<li>ブラウザ</li>
+<li>ハイパーテキストを解釈して人間が見やすい形に描画する</li>
+</ul>
+<p>さらにステップアップするためのアイデアをいくつか記載します。あなたならどうしますか？</p>
+<ul>
+<li>この構成をクラウドサービスで実現したい場合、どのようなサービスを利用しますか？構成図と合わせて記載してみてください。</li>
+<li>DBは本当にRDBしか利用できないのでしょうか？</li>
+<li>Webサーバー・Webアプリケーションサーバーの状態を監視するためにはどのような構成を加えれば良さそうですか？</li>
+<li>サーバー自体を動作させる環境はどうしましょう？</li>
+<li>OSは？</li>
+<li>そもそもコンテナ群を使いますか？</li>
+<li>SasSに任せます？</li>
+</ul>
+<h3 id="問-13">問２</h3>
+<p>次の文章を読み，回答を導くプログラムを組むこと。言語は不問とする。（配点：7点）</p>
+<p>A，Bを含む10人から5人のスタッフを選ぶとき，次の問いに答えよ。</p>
+<h4 id="section">（１）</h4>
+<p>A，Bをともに含む選び方は何通りあるか。</p>
+<h4 id="解答-1">解答</h4>
+<ul>
+<li>56通り</li>
+</ul>
+<p>下記2つを満たした場合のみ、<code>3</code>点を加算してください。</p>
+<ul>
+<li>作成したプログラムが動作すること</li>
+<li>最終出力された答えの結果が56通りであること（出力方法・ <code>通り</code> の有無は考慮せず、計算結果のみ正しいかを確認すること）</li>
+</ul>
+<h4 id="問題の解説1">問題の解説（1）</h4>
+<p>まずは <strong>問題自体の解説</strong> から行います。これは数学Iの範囲なのですが、みなさん解答できましたか？もふもふちゃんは数学が苦手なので数学得意ボーイに講義してもらいました。</p>
+<p>まず、10人の人がいて、5人を選ぶんですよね。</p>
+<ul>
+<li>はな</li>
+<li>さあや</li>
+<li>ほまれ</li>
+<li>えみる</li>
+<li>ルールー</li>
+<li>いちか</li>
+<li>ひまり</li>
+<li>あおい</li>
+<li>ゆかり</li>
+<li>あきら</li>
+</ul>
+<p>まず、10人から5人を選択する流れを追いかけてみましょう。</p>
+<ol style="list-style-type: decimal">
+<li>10人の中から1人（はなを）選ぶ（10通り）</li>
+<li><code>はな以外の</code>9人の中から1人（さあやを）選ぶ（9通り）</li>
+<li><code>はな・さあや以外の</code>8人の中から1人（いちかを）選ぶ（8通り）</li>
+<li><code>はな・さあや・いちか以外の</code>7人の中から1人（ひまりを）選ぶ（7通り）</li>
+<li><code>はな・さあや・いちか・ひまり以外の</code>6人の中から1人（ほまれを）選ぶ（6通り）</li>
+<li>はな・さあや・いちか・ひまり・ほまれが選ばれた</li>
+</ol>
+<p>パターンの組み合わせを樹形図で書いてみると、大変なことになります。</p>
+<p>しかし、よくみると同じ組み合わせも存在しそうです。</p>
+<p>今回は10人の中から5人を選ぶので、同じ組み合わせは排除する必要があります。これを数学の公式で示すと</p>
+<!-- 数式を書く -->
+<p>となります。</p>
+<p>計算方法は次の通りです。</p>
+<!-- 数式を書く -->
+<p> これで万事解決！と思われるかもしれませんが、今回はA・Bを共に選ぶ方法を求める必要があります。Aをえみる、Bをルールーとすると、えみるとルールーは <strong>ぜったいに組み合わせの中に入れる必要があります</strong> 。2人はえルっとプリキュアなのです。絶対に片方が欠けることは許されません。</p>
+<p>ということは、 <code>10人から5人を選ぶ</code> といいつつも、求められていることは <code>残りの8人から3人を選ぶ</code> ことなのです。8人から3人を選び、そこにえみるとルールーを足すと5人になりますからね。</p>
+<p>よって、計算するべきは8人から3人を選ぶ組み合わせとなります。</p>
+<!-- 数式を書く -->
+<p>答えは <strong>56通り</strong> となります。</p>
+<h4 id="プログラムでの計算">プログラムでの計算</h4>
+<p>では、これをプログラムで計算しましょう。実際の計算は</p>
+<p>です。これを実現するためには、どのような文法を利用すれば良いでしょうか？思いつく限り挙げてみますね。</p>
+<ul>
+<li>掛け算</li>
+<li>分数の箇所（分母）（分子）を計算するのに必要</li>
+<li>割り算</li>
+<li>分数を計算するために必要（分数は割り算で計算するため）</li>
+</ul>
+<p>では、まず8通りから3人を選ぶ計算（分子）をプログラムで再現してみます。ここではHTMLとJavaScriptを使いますが、みなさんは好きな言語で実施してみてください。HTMLをブラウザで開き、 <code>問3 問題1（分子）の計算結果</code> ボタンを押すと、計算結果が出力されるはずです。</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;title&gt;</span>えみルー<span class="kw">&lt;/title&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;3_1_1&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;numerator&quot;</span><span class="kw">&gt;</span>問3 問題1（分子）の計算結果<span class="kw">&lt;/button&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;numeratorPtag&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;../js/3_1_1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">let</span> numeBtn <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;numerator&#39;</span>)<span class="op">;</span>
+<span class="kw">let</span> numeElm <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;numeratorPtag&#39;</span>)<span class="op">;</span>
+
+<span class="va">numeBtn</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> () <span class="op">=&gt;</span> <span class="op">{</span>
+  <span class="kw">let</span> numeCalc <span class="op">=</span> <span class="dv">8</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">*</span> <span class="dv">6</span><span class="op">;</span>
+  <span class="va">numeElm</span>.<span class="at">innerText</span> <span class="op">=</span> numeCalc<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<div class="figure">
+<img src="../images/3_1_1_runProgram.png" />
+
+</div>
+<p>今度は、重複している組み合わせを取り除く計算を行ってみましょう。HTMLは先ほどの例と同じ物に追記しています。</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;title&gt;</span>えみルー<span class="kw">&lt;/title&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;3_1_1&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;numerator&quot;</span><span class="kw">&gt;</span>問3 問題1（分子）の計算結果<span class="kw">&lt;/button&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;numeratorPtag&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;../js/3_1_1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;3_1_2&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;denominator&quot;</span><span class="kw">&gt;</span>問3 問題1（分母）の計算結果<span class="kw">&lt;/button&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;denominatorPTag&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;../js/3_1_2.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">let</span> denoBtn <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;denominator&#39;</span>)<span class="op">;</span>
+<span class="kw">let</span> denoElm <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;denominatorPTag&#39;</span>)<span class="op">;</span>
+
+<span class="va">denoBtn</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> () <span class="op">=&gt;</span> <span class="op">{</span>
+  <span class="kw">let</span> denoCalc <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">1</span><span class="op">;</span>
+  <span class="va">denoElm</span>.<span class="at">innerText</span> <span class="op">=</span> denoCalc<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<p>では、最後に <code>分子</code> 割る <code>分母</code> を実行します。</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;X-UA-Compatible&quot;</span><span class="ot"> content=</span><span class="st">&quot;IE=edge&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;title&gt;</span>えみルー<span class="kw">&lt;/title&gt;</span>
+  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;3_1_1&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;numerator&quot;</span><span class="kw">&gt;</span>問3 問題1（分子）の計算結果<span class="kw">&lt;/button&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;numeratorPtag&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;../js/3_1_1.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;3_1_2&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;denominator&quot;</span><span class="kw">&gt;</span>問3 問題1（分母）の計算結果<span class="kw">&lt;/button&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;denominatorPtag&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;../js/3_1_2.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;3_1_3&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;result&quot;</span><span class="kw">&gt;</span>問3の計算結果<span class="kw">&lt;/button&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;resultPtag&quot;</span><span class="kw">&gt;&lt;/p&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;../js/3_1_3.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">let</span> denoBtn <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;denominator&#39;</span>)<span class="op">;</span>
+<span class="kw">let</span> denoElm <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;denominatorPtag&#39;</span>)<span class="op">;</span>
+
+<span class="va">denoBtn</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> () <span class="op">=&gt;</span> <span class="op">{</span>
+  <span class="kw">let</span> denoCalc <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">1</span><span class="op">;</span>
+  <span class="va">denoElm</span>.<span class="at">innerText</span> <span class="op">=</span> denoCalc<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<p>これを実行すると56通りとなります。しかし、プログラムとしてはかなりの改善点がありそうです。</p>
+<ul>
+<li>分母と分子で個別に計算した結果を再利用できないか？</li>
+<li>再度計算するの、面倒ですよね</li>
+<li>繰り返し計算することはできないのか？</li>
+<li>3 かける 2 かける 1...と記載するのは長いし面倒です</li>
+<li>このままだと、選ばれる人数が変わったときに対応できない</li>
+<li>10人から4人を選ぶ場合、掛け算する数を再度修正する必要があります</li>
+<li>メンテナンスしないようにするには、どうすれば良いでしょうか？</li>
+</ul>
+<h4 id="section-1">（２）</h4>
+<p>Aは選ばれ，Bは選ばれない選び方は何通りあるか。</p>
+<h4 id="解答-2">解答</h4>
+<ul>
+<li>70通り</li>
+</ul>
+<p>下記2つを満たした場合のみ、<code>4</code>点を加算してください。</p>
+<ul>
+<li>作成したプログラムが動作すること</li>
+<li>最終出力された答えの結果が70通りであること（出力方法・ <code>通り</code> の有無は考慮せず、計算結果のみ正しいかを確認すること）</li>
+</ul>
+<h4 id="解答例-1">解答例</h4>
+<h3 id="採点基準">採点基準</h3>
+<ul>
+<li>プログラムで出力された答えが正しいこと。</li>
+<li>〇〇に値を変更すると〇〇になること。</li>
+</ul>
+<h3 id="解説-16">解説</h3>
+<h2 id="第問-3">第４問</h2>
+<p>Restful APIについて説明しなさい。このとき、次の項目について説明する文章を含めること。（配点：10点）</p>
+<ul>
+<li>RPC APIとの相違点</li>
+<li>Restful APIを採用するべき場面</li>
+<li>Restful APIの設計原則となる規約の名称とその内容（4つ）</li>
+</ul>
+<h3 id="解答例-2">解答例</h3>
+<h3 id="解説-17">解説</h3>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>問1の問題7の選択肢3.IDEの解説もあわせて参照してください。<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Googleが提供するアクセス解析ツールです。Webページに何件アクセスがあったか・Webページが参照された時間・どのページが一番見られているか、などを解析できます。<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>環境を作成した人以外の誰かに環境構築をしてもらうこと<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>例：https：//www.taiyoushuppan.co.jp/doujin/ftp/index.php<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>見られるとはっずかし〜〜〜〜〜〜〜などという思いはあるかもしれませんが、それはまた別のハナシです。<a href="#fnref5">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

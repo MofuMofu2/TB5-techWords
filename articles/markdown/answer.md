@@ -159,7 +159,7 @@ iPhoneのMarkdown対応エディタアプリ``1Writer``（URL： ``https：//itu
 1. スクリプト言語
 ```
 
-問1で解説しているため、ここでは詳しく取り上げません。
+問題1の問2の中で解説しているため、ここでは詳しく取り上げません。
 
 ```markdown
 2. 関数型言語
@@ -220,6 +220,26 @@ Webページの検索エンジンやメール機能を提供する大企業で�
 
 **XML（Extensible Markup Language）** とは、マークアップ言語の一種です。XMLの特徴は自分でタグを作成できることと、Webページの作成以外でも利用できる言語だということです。例えば、Javaアプリケーションの階層の記述はXMLで記載されています。他には、ミドルウェアのログがXML形式で出力されていることもあります。
 
+##### XMLの例
+
+```xml
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">3. <span class="fl">XML</span></code></pre></div>
+<p><strong>XML（Extensible Markup Language）</strong> とは、マークアップ言語の一種です。XMLの特徴は自分でタグを作成できることと、Webページの作成以外でも利用できる言語だということです。例えば、Javaアプリケーションの階層の記述はXMLで記載されています。他には、ミドルウェアのログがXML形式で出力されていることもあります。</p>
+<p>XMLとHTMLは <code>SGML（Standard Generalized Markup Language）</code> から派生した言語です。HTMLはWeb上で文章を表示することに特化していますが、XMLは機能を拡張できるように改良されました。動物の進化と似ていますね。どちらもW3Cによって規格の標準化が進められています。</p>
+<h3 id="問4">問4</h3>
+<p>音声形式で情報を配布するものとして、最も適当なものを選択しなさい。</p>
+<h3 id="解答">解答</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">ポッドキャスト</span></code></pre></div>
+<h3 id="解説-3">解説</h3>
+<p>Webサイトの更新履歴を配信するためのファイルのことを、　<strong>フィード</strong> といいます。フィードを取得すると、Webサイトでどこが更新されたかを収集することができます。Webの記事をまとめているサイトは、この<code>フィード</code>を利用しています。この中でも、 <code>フィード</code> を利用して音楽や動画情報を配信する仕組みのことを <strong>ポッドキャスト（Podcast）</strong> といいます。Apple社が専用のポッドキャストを所有しているため、認知度はかなり高いフィードの形式と言えるでしょう。色々なPodcastが配信されているので、好きなものを探して視聴してみると良いでしょう。不定期配信の雑誌が音声購読されている、そんな気分を味わうことができます。</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">2. <span class="fl">RSSフィード</span></code></pre></div>
+<p><strong>RSSフィード</strong> （あーるえすえすふぃーど/正式名称はReally Simple Syndication：りありー・しんぷる・しんでぃけーしょん）とは、フィードの形式の１種です。<code>RDF</code>という言語で書かれた<code>RSS1.0</code>と、<code>XML</code>で書かれた<code>RSS2.0</code>が存在します。株式会社はてなが運営する<code>はてなブックマーク</code>（<code>http://b.hatena.ne.jp/</code> ）というサービスでは、各URLの末尾に <code>.rss</code> とつけると、RSS2.0形式のRSSフィードを参照することができます。</p>
+<div class="figure">
+<img src="../images/hatebu_rss.png" alt="hatebu_rss" />
+<p class="caption">hatebu_rss</p>
+</div>
+```
+
 XMLとHTMLは ``SGML（Standard Generalized Markup Language）`` から派生した言語です。HTMLはWeb上で文章を表示することに特化していますが、XMLは機能を拡張できるように改良されました。動物の進化と似ていますね。どちらもW3Cによって規格の標準化が進められています。
 
 ### 問4
@@ -277,6 +297,8 @@ LINEはチャットツールだからSNSじゃないのでは…？と思われ�
 
 Webエンジニアの人は、Googleを検索エンジンとして利用していることが多いです。そのせいか、ちゃんと調査したかを質問するネットミームの中に「それ、ググった？」「GGKS（ググれカス）」という言葉が存在しています。Googleで検索した？という意味ですので、覚えておきましょう。ただし、人にカスと言ってはいけないと思います。
 
+![serch_difference](../images/serch_difference.png)
+
 ### 問５
 
 ``イ`` にはHTMLの体裁を表現する記述方法の名称が当てはまるが、この名称として最も適当なものを選択しなさい。
@@ -330,6 +352,14 @@ CSS
 **GIF（Graphics Interchange Format）** とは、画像を保存するための拡張子の一種です。``ジフ``が正しい読み方とされています。GIFの大きな特徴として、複数枚の画像を1つのファイルに保存することで、短いアニメーションが作成できる（GIFアニメーション）が挙げられます。SNSやLINEスタンプで画像が動いているものが多く見られますが、あれがGIFアニメーションです。
 
 GIFは可逆圧縮方式でデータを保存することができますが、256色以下の画像のみ扱うことができます。制限が付いている代わりに、他の画像拡張子では表現できない動きを扱うことができる、と考えると良いでしょう。
+
+##### JPEG・PNG・GIFの特徴
+
+| 形式名 | 圧縮方式   | 元に戻せるか | ファイルサイズ     | その他                                     |
+|--------|------------|--------------|--------------------|--------------------------------------------|
+| JPEG   | 非可逆圧縮 | 戻せない     | 小さめ             | スマートフォンの画像はこの形式で保存される |
+| PNG    | 可逆圧縮   | 戻せる       | 大きめ             | 背景が透明な画像（透過画像）が保存できる   |
+| GIF    | 可逆圧縮   | 戻せる       | 保存するものによる | 短いアニメーションが作成できる             |
 
 ```markdown
 3. ai
